@@ -1,0 +1,10 @@
+3.1. Compute a value n = (length of your first name) + (length of your last name) + (difference between the first letter of your last name and the capital letter ‘A’)
+
+	Vladimir - 8
+	Margaryan - 9
+	diff = M - A = 13 - 1 = 12
+	n = 8 + 9 + 12 = 29
+
+3.2. Compute the index of your individual dataset rounded to the nearest integer id = round(–0.00165*n^3 + 0.12384*n^2 – 2.33779*n + 14.1165)
+
+	 id = round(–0.00165*29^3 + 0.12384*29^2 – 2.33779*29 + 14.1165) = round(10,22818) = 10
