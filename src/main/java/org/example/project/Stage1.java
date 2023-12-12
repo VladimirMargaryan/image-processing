@@ -4,8 +4,11 @@ import ij.IJ;
 import ij.ImagePlus;
 import ij.plugin.filter.Binary;
 import ij.process.ColorProcessor;
+import ij.process.ImageProcessor;
 
 import java.awt.*;
+import java.util.Optional;
+import java.util.stream.IntStream;
 
 public class Stage1 {
     private static final int TOLERANCE = 40;
@@ -43,18 +46,34 @@ public class Stage1 {
         }
 
         colorProcessor.invert();
-        colorProcessor.erode();
 
-        // Detecting region with text and cropping
-        IJ.run(image, "8-bit", "");
-        IJ.run(image, "Convert to Mask", "");
-        IJ.run(image, "Despeckle", "");
-        IJ.run(image, "Create Selection", "");
-        IJ.run(image, "Fit Rectangle", "");
-        IJ.run(image, "Crop", "");
+        for (int x = 0; x < colorProcessor.getWidth(); x++) {
+            for (int y = 0; y < colorProcessor.getHeight(); y++) {
+                final Color pixelColor = colorProcessor.getColor(x, y);
+
+                if (pixelColor.getRGB() > new Color(240, 240, 240).getRGB()
+                        || pixelColor.getRGB() < new Color(40, 40, 40).getRGB()) {
+                    colorProcessor.putPixel(x, y, new int[]{255, 255, 255});
+                }
+            }
+        }
+
+        final ImagePlus tempImage = image.duplicate();
+        IJ.run(tempImage, "8-bit", "");
+        IJ.run(tempImage, "Convert to Mask", "");
+        IntStream.range(0, 5).forEach(i -> IJ.run(tempImage, "Despeckle", ""));
+        IJ.run(tempImage, "Create Selection", "");
+        IJ.run(tempImage, "Fit Rectangle", "");
+
+        final ImagePlus croppedImage = Optional.ofNullable(tempImage.getRoi())
+                .map(roi -> {
+                    image.setRoi(roi);
+                    ImageProcessor croppedProcessor = image.getProcessor().crop();
+                    return new ImagePlus("Cropped Image", croppedProcessor);
+                }).orElse(image);
 
         IJ.saveAs(
-                image,
+                croppedImage,
                 "PNG",
                 imagePath.split(image.getTitle())[0] + image.getTitle().split(".jpg")[0] + "-bin.png"
         );
