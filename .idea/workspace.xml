@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="65f502a3-2586-48ba-b1a1-4a99ee8418ba" name="Changes" comment="Stage-2 Evaluated page features">
       <change afterPath="$PROJECT_DIR$/src/main/java/org/example/project/Stage3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/project/Stage4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/project/Stage2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/project/Stage2.class" afterDir="false" />
     </list>
@@ -50,7 +49,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Stage4">
+  <component name="RunManager" selected="Application.Stage3">
     <configuration name="OpenCv" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.project.OpenCv" />
       <module name="image-processing" />
@@ -118,8 +117,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Stage4" />
         <item itemvalue="Application.Stage3" />
+        <item itemvalue="Application.Stage4" />
         <item itemvalue="Application.Stage2" />
         <item itemvalue="Application.Stage1" />
         <item itemvalue="Application.OpenCv" />
@@ -136,7 +135,7 @@
       <updated>1702201975789</updated>
       <workItem from="1702201977110" duration="36714000" />
       <workItem from="1702488117198" duration="154000" />
-      <workItem from="1703190202510" duration="3122000" />
+      <workItem from="1703190202510" duration="4749000" />
     </task>
     <task id="LOCAL-00001" summary="Stage-1 Filtering image from printed text and instructor's marks and cropping text region by detecting">
       <option name="closed" value="true" />
@@ -202,7 +201,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703191992896</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Stage-2 Evaluated page features">
+      <option name="closed" value="true" />
+      <created>1703193594539</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703193594539</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Stage-2 Evaluated page features">
+      <option name="closed" value="true" />
+      <created>1703193781170</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703193781170</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
